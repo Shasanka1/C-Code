@@ -1,32 +1,25 @@
-//
-//  main.cpp
-//  TestCode
-//
-//  Created by Shasanka nudurupati on 9/29/18.
-//  Copyright © 2018 Shasanka nudurupati. All rights reserved.
-//
+  // This program unsafely accesses an area of memory by writing // values beyond an array's boundary. // WARNING: If you compile and run this program, it could crash.
 
-#include "main.hpp"
-#include <list>
-#include <iostream>
+ #include <iostream>
 
 using namespace std;
 
-int main(){
-    //** Prime Factorization Program**//
+  int main()
+   {
+        const int SIZE = 3;  // Constant for the array size
+          int values[SIZE];    // An array of 3 integers
+          int count;           // Loop counter variable
     
-    cout << " The Factorization Program \n\n\n";
+          // Attempt to store five numbers in the 3-element array.
+          cout << "I will store 5 numbers in a 3-element array!\n";
+          for (count = 0; count < 5; count++)
+              values[count] = 100;
     
-    //** Initializing the users input value & List of prime values**//
-    int num;
-
-    
-    //**Getting users input**//
-    
-    cout << " Enter in the value : ";
-    cin>> num;
-    
-    //** Calculations & output display
-    
-   int count = -1; do { cout << "Hello World\n"; count++; } while (count < 1);
-}
+         // If the program is still running, display the numbers.
+         cout << "If you see this message, it means the program\n";
+         cout << "has not crashed! Here are the numbers:\n";
+       for (int i = 3; i < 5; i++){
+           cout << " The out of bounds : " << values[i] << endl;
+       }
+       
+   }
